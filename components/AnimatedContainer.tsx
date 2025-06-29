@@ -1,5 +1,6 @@
-import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import React, { ReactNode } from "react";
+import { motion, Variants } from "framer-motion";
 
 interface AnimatedContainerProps {
   children: ReactNode;
@@ -8,7 +9,7 @@ interface AnimatedContainerProps {
 }
 
 const AnimatedContainer = ({ children, delay, styles }: AnimatedContainerProps) => {
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0,
       x: 50,
@@ -19,8 +20,8 @@ const AnimatedContainer = ({ children, delay, styles }: AnimatedContainerProps) 
       x: 0,
       y: 0,
       transition: {
-        type: 'tween',
-        ease: 'easeIn',
+        type: "tween",
+        ease: "easeIn",
         duration: 0.5,
         delay: delay,
       },
